@@ -61,5 +61,31 @@ namespace CitySearchTests
             var result = _cityFinder.Search("X");
             Assert.IsEmpty(result.NextCities);
         }
+
+        [Test]
+        [TestCase('a')]
+        [TestCase('A')]
+        [TestCase(' ')]
+        [TestCase('-')]
+        [TestCase('x')]
+        public void RegexAllowsValidInput(char keyChar)
+        {
+            var result = CitySearchHelper.IsAllowedChar(keyChar);
+
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        [TestCase('@')]
+        [TestCase('!')]
+        [TestCase('"')]
+        [TestCase('_')]
+        [TestCase('#')]
+        public void RegexRejectsInvalidInput(char keyChar)
+        {
+            var result = CitySearchHelper.IsAllowedChar(keyChar);
+
+            Assert.IsFalse(result);
+        }
     }
 }
