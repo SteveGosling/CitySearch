@@ -44,6 +44,11 @@ namespace CitySearch
             currentNode.IsEndOfWord = true;
         }
 
+        /// <summary>
+        /// Check for and return the next available characters from the list of cities
+        /// </summary>
+        /// <param name="prefix">The current string entered so far</param>
+        /// <returns>A list of next characters based on the current input</returns>
         public List<string> SuggestNextCharacters(string prefix)
         {
             var currentNode = root;
@@ -59,6 +64,11 @@ namespace CitySearch
             return new List<string>(currentNode.Children.Keys.Select(x => x.ToString()));
         }
 
+        /// <summary>
+        /// Check for an return the available cities based on the string value
+        /// </summary>
+        /// <param name="prefix">The current string entered so far</param>
+        /// <returns>A list of city names that match the current input</returns>
         public List<string> SuggestNextCities(string prefix)
         {
             var currentNode = root;

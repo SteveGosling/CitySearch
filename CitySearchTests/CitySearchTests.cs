@@ -5,7 +5,7 @@ namespace CitySearchTests
 {
     public class CitySearchTests
     {
-        private CityFinder _cityFinder;
+        private CitySearch.CityFinder _cityFinder;
 
         [SetUp]
         public void Setup()
@@ -15,7 +15,7 @@ namespace CitySearchTests
                 "New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "London", "Leeds", 
                 "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose", "Ban Chang", "Bangalore", "Bangkok", "Bandung", "Bangui"
             };
-            _cityFinder = new CityFinder(cityNames);
+            _cityFinder = new CitySearch.CityFinder(cityNames);
         }
 
         [Test]

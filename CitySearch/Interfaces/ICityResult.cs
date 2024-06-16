@@ -9,12 +9,12 @@ namespace CitySearch.Interfaces
     public interface ICityResult
     {
         /// <summary>
-        /// Collection to store the next available letters based on previous input
+        /// Collection to store the next available letters based on previous inputs
         /// </summary>
         ICollection<string> NextLetters { get; set; }
 
         /// <summary>
-        /// Collection to store the possible city name based on previous input
+        /// Collection to store the possible city name based on previous inputs
         /// </summary>
         ICollection<string> NextCities { get; set; }
     }
