@@ -3,7 +3,11 @@ using CitySearch.Interfaces;
 
 // initialise the city name collection
 // this would normally be database driven AND cached from a real data source
-var cityNames = new List<string> { "New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "London", "Bangalore", "Bangkok", "Bandung", "Bangui", "Leeds", "Lagos" };
+var cityNames = new List<string> { 
+    "New York", "Nanning", "Naples", "Navi Mumbai", "Nottingham", "New Kingston", "Ningbo", "Nairobi", "Nyala", "Natal", "Newcastle", "Norwich", "Nantes",
+    "Los Angeles", "Chicago", "Houston", "Phoenix", "London", 
+    "Bangalore", "Bangkok", "Bandung", "Bangui", 
+    "Leeds", "Lagos" };
 
 ICityFinder cityFinder = new CitySearch.CityFinder(cityNames);
 

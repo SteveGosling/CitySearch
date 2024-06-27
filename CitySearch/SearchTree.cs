@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,14 +53,14 @@ namespace CitySearch
         public List<string> SuggestNextCharacters(string prefix)
         {
             var currentNode = root;
-            
-            foreach (var character in prefix)
-            {
-                if (!currentNode.Children.ContainsKey(character))
-                    return new List<string>();
 
-                currentNode = currentNode.Children[character];
-            }
+            // get the last character to save looping through the entire string
+            var character = prefix.Last();
+            
+            if (!currentNode.Children.ContainsKey(character))
+                return new List<string>();
+
+            currentNode = currentNode.Children[character];
             
             return new List<string>(currentNode.Children.Keys.Select(x => x.ToString()));
         }
@@ -87,7 +88,7 @@ namespace CitySearch
         private List<string> GatherAllWords(TreeNode node, string currentPrefix)
         {
             List<string> words = new List<string>();
-            
+
             if (node.IsEndOfWord)
                 words.Add(currentPrefix);
 
